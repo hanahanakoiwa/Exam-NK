@@ -17,18 +17,19 @@ import tool.Action;
 public class SubjectUpdateExceptionAction extends Action {
     public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
 
-        HttpSession session = req.getSession();
+    	// 現在のセッションを取得
+    	HttpSession session = req.getSession();
         Teacher teacher = (Teacher) session.getAttribute("user");
         School school = teacher.getSchool();
-        Map<String, String> errors = new HashMap<>();// エラーメッセージ
+        Map<String, String> errors = new HashMap<>();// エラー
 
         //変更内容の保存
-        String cd = req.getParameter("cd");// 科目コードの取得
-        String name = req.getParameter("name");// 科目名の取得
-        SubjectDao sDao = new SubjectDao();// 科目Dao
+        String cd = req.getParameter("cd");
+        String name = req.getParameter("name");
+        SubjectDao sDao = new SubjectDao();
         Subject subjects = sDao.get(cd, teacher.getSchool());
 
-        // 保存するデータをSubjectにセット
+        //インスタンスを作成
         Subject sub = new Subject();
         sub.setCd(cd);
         sub.setName(name);
@@ -42,10 +43,12 @@ public class SubjectUpdateExceptionAction extends Action {
             req.setAttribute("errors", errors);
             req.getRequestDispatcher("subject_update.jsp").forward(req, res);
         } else {
-            // 変更内容の保存
-            sDao.save(sub);
+
+
+        	sDao.save(sub);
 
             req.getRequestDispatcher("subject_update_done.jsp").forward(req,res);
+
         }
     }
 }

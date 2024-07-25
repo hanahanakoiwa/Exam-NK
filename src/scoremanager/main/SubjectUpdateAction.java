@@ -13,7 +13,8 @@ import tool.Action;
 public class SubjectUpdateAction extends Action {
     public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
 
-        HttpSession session = req.getSession();
+    	// 現在のセッションを取得
+    	HttpSession session = req.getSession();
         Teacher teacher = (Teacher)session.getAttribute("user");
 
         School school = teacher.getSchool();

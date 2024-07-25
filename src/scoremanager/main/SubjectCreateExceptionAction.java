@@ -13,12 +13,13 @@ import dao.SubjectDao;
 import tool.Action;
 
 public class SubjectCreateExceptionAction extends Action{
-
+	// セッションを取得
     public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception{
         HttpSession session = req.getSession();
         Teacher teacher = (Teacher)session.getAttribute("user");
-        SubjectDao sDao = new SubjectDao();// 科目Dao
-        Map<String, String> errors = new HashMap<>();// エラーメッセージ
+        SubjectDao sDao = new SubjectDao();
+        // エラーメッセージ
+        Map<String, String> errors = new HashMap<>();
 
         String cd = req.getParameter("cd");
         String name = req.getParameter("name");
@@ -29,8 +30,8 @@ public class SubjectCreateExceptionAction extends Action{
         if (cd.length() != 3) {
             req.setAttribute("cd", cd);
             req.setAttribute("name", name);
-            System.out.println("三文字で入力");
-            errors.put("errors", "科目コードは3文字で入力してください。");
+            System.out.println("３文字で入力");
+            errors.put("errors", "科目コードは３文字で入力してください。");
             req.setAttribute("errors", errors);
             req.getRequestDispatcher("subject_create.jsp").forward(req, res);
 
@@ -49,6 +50,7 @@ public class SubjectCreateExceptionAction extends Action{
             sub.setName(name);
             sub.setSchool(((Teacher)session.getAttribute("user")).getSchool());
             boolean flag = sDao.save(sub);
+            //フォワード
             req.getRequestDispatcher("subject_create_done.jsp").forward(req, res);
         }
 

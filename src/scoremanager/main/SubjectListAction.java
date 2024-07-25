@@ -13,14 +13,14 @@ import tool.Action;
 
 public class SubjectListAction extends Action {
     public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
-        HttpSession session = req.getSession();// セッション
+        HttpSession session = req.getSession();
         Teacher teacher = (Teacher)session.getAttribute("user");
 
-        SubjectDao subDao = new SubjectDao();// 科目Dao
+        SubjectDao subDao = new SubjectDao();
 
         List<Subject> subjects = subDao.filter(teacher.getSchool());
 
-        // リクエストにデータをセット
+        // リクエスト
         req.setAttribute("subjects", subjects);
 
         req.getRequestDispatcher("subject_list.jsp").forward(req, res);
