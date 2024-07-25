@@ -14,6 +14,5 @@ public class SubjectCreateAction extends Action{
     Teacher teacher = (Teacher)session.getAttribute("user");
 
     req.getRequestDispatcher("subject_create.jsp").forward(req,res);
-
   }
 }
