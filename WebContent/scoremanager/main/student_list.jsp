@@ -71,7 +71,7 @@
 								<td>${student.name}</td>
 								<td>${student.classNum}</td>
 								<td class="text-center">
-									<%-- 在学フラグがたっている場合「○」それ以外は「×」を表示 --%>
+
 									<c:choose>
 										<c:when test="${student.isAttend()}">
 											○

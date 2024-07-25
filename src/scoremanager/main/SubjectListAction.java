@@ -18,9 +18,6 @@ public class SubjectListAction extends Action {
 
         SubjectDao subDao = new SubjectDao();// 科目Dao
 
-        // DBからデータ取得３
-        // ログインユーザーの学校コードをもとにクラス番号の一覧を取得
-
         List<Subject> subjects = subDao.filter(teacher.getSchool());
 
         // リクエストにデータをセット
