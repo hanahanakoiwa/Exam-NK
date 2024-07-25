@@ -31,7 +31,7 @@ public class StudentListAction extends Action {
         int year = todaysDate.getYear();// 現在の年を取得
         StudentDao sDao = new StudentDao();// 学生Dao
         ClassNumDao cNumDao = new ClassNumDao();// クラス番号Daoを初期化
-        Map<String, String> errors = new HashMap<>();// エラーメッセージ
+        Map<String, String> errors = new HashMap<>();// エラー メッセージ
 
         // リクエストパラメーターの取得　２
         entYearStr = req.getParameter("f1");

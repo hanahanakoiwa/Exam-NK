@@ -20,7 +20,7 @@ public class SubjectListAction extends Action {
 
         List<Subject> subjects = subDao.filter(teacher.getSchool());
 
-        // リクエスト
+        //  リクエスト
         req.setAttribute("subjects", subjects);
 
         req.getRequestDispatcher("subject_list.jsp").forward(req, res);

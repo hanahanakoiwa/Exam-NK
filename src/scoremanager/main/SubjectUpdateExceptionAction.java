@@ -23,7 +23,7 @@ public class SubjectUpdateExceptionAction extends Action {
         School school = teacher.getSchool();
         Map<String, String> errors = new HashMap<>();// エラー
 
-        //変更内容の保存
+        //変更内容 の保存
         String cd = req.getParameter("cd");
         String name = req.getParameter("name");
         SubjectDao sDao = new SubjectDao();

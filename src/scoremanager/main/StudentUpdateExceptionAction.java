@@ -2,15 +2,10 @@ package scoremanager.main;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import bean.Student;
-import bean.Teacher;
-import bean.School;
-import dao.StudentDao; 
-import dao.ClassNumDao;
+import dao.StudentDao;
 import tool.Action;
-import java.util.*;
 
 
 public class StudentUpdateExceptionAction extends Action {
@@ -21,7 +16,7 @@ public class StudentUpdateExceptionAction extends Action {
         String no = req.getParameter("no");// 学生番号の取得
         String name = req.getParameter("name");// 氏名の取得
         String class_num = req.getParameter("class_num");// クラスの取得
-        String si_attend = req.getParameter("si_attend");// 在学フラグ(在学：on,在学ではない：null)
+        String si_attend = req.getParameter("si_attend");// 在学フラグ
         boolean attend = true;
 
         // 在学フラグがnullの場合

@@ -9,7 +9,7 @@ import tool.Action;
 
 public class SubjectCreateAction extends Action{
   public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception{
-	// セッションを取得
+	// セッションを 取得
     HttpSession session = req.getSession();
     Teacher teacher = (Teacher)session.getAttribute("user");
 

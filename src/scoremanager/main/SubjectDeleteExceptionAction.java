@@ -14,7 +14,7 @@ public class SubjectDeleteExceptionAction extends Action{
     public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception{
         HttpSession session = req.getSession();
         Teacher teacher = (Teacher)session.getAttribute("user");
-        System.out.println("aaaa");
+        System.out.println("aaaaa");
 
         String cd = req.getParameter("cd");
 

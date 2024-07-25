@@ -18,7 +18,7 @@ public class SubjectCreateExceptionAction extends Action{
         HttpSession session = req.getSession();
         Teacher teacher = (Teacher)session.getAttribute("user");
         SubjectDao sDao = new SubjectDao();
-        // エラーメッセージ
+        // エラー メッセージ
         Map<String, String> errors = new HashMap<>();
 
         String cd = req.getParameter("cd");

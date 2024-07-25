@@ -11,7 +11,7 @@ import tool.Action;
 
 public class SubjectDeleteAction extends Action{
     public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
-    	// セッションを取得
+    	// セッション を取得
         HttpSession session = req.getSession();
 
         String cd = req.getParameter("cd");

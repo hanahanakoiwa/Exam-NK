@@ -3,6 +3,7 @@ package scoremanager.main;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 import bean.Student;
 import bean.Teacher;
 import dao.StudentDao;
@@ -38,7 +39,6 @@ public class StudentCreateExceptionAction extends Action{
         boolean flag = sDao.save(stu);
 
         req.getRequestDispatcher("student_create_done.jsp").forward(req, res);
-        
+
     }
-    
 }
